@@ -1,0 +1,282 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  overflow: hidden;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.fade-in {
+  animation: fadeInEffect 0.8s ease-in forwards;
+}
+
+@keyframes fadeInEffect {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+.login-screen {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-logo {
+  width: 167px;
+  margin: 25px 50px;
+}
+
+.login-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+
+.login-card {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 60px 68px 40px;
+  width: 450px;
+  border-radius: 4px;
+  color: white;
+  margin-top: -60px; 
+}
+
+.login-card h1 {
+  font-size: 32px;
+  margin-bottom: 28px;
+  font-weight: 700;
+}
+
+.login-input {
+  width: 100%;
+  height: 50px;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 0 20px;
+  margin-bottom: 16px;
+  color: white;
+  font-size: 16px;
+}
+
+.signin-btn {
+  width: 100%;
+  height: 50px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+
+.help-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #b3b3b3;
+  margin-top: 12px;
+}
+
+.card-footer {
+  margin-top: 50px;
+}
+
+.card-footer p {
+  color: #737373;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.card-footer p a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.recaptcha-text {
+  font-size: 13px;
+  line-height: 1.3;
+  color: #8c8c8c !important;
+}
+
+.recaptcha-text a {
+  color: #0071eb !important;
+}
+
+.video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.full-screen-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #8c8c8c;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+.signin-btn {
+
+  transition: background-color 0.2s ease;
+}
+
+.signin-btn:hover {
+  background-color: #c11119; 
+}
+
+
+.card-footer a:hover, 
+.help-row a:hover {
+  text-decoration: underline;
+}
+
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #8c8c8c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: #fff;
+}
+
+
+.signin-btn {
+ 
+  transition: background-color 0.2s ease;
+}
+
+.signin-btn:hover {
+  background-color: #c11119; 
+}
+
+.card-footer a:hover, 
+.help-row a:hover {
+  text-decoration: underline;
+}
+
+
+.login-input {
+
+  padding-right: 50px; 
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 25px 50px;
+  position: absolute; 
+  width: 100%;
+  z-index: 5;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.lang-dropdown {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: 1px solid #aaa;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.nav-signin-btn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 7px 17px;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.welcome-screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-text {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #e50914; 
+  text-align: center;
+  margin-bottom: 20px;
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
