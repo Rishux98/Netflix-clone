@@ -58,7 +58,7 @@ function App() {
               </div>
               <div className="profile-item">
                 <div className="avatar"><img src={avatar3} alt="Kirtan" className="avatar-img" /></div>
-                <p>Ayush</p>
+                <p>kirtan</p>
               </div>
               <div className="profile-item">
                 <div className="avatar"><img src={avatar4} alt="Baby" className="avatar-img" /></div>
