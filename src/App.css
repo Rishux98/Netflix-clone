@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +8,9 @@ body, html, #root {
   width: 100%;
   height: 100%;
   background-color: #000;
-  overflow: hidden;
+  overflow-x: hidden; /* Changed from hidden to overflow-x to allow vertical space if needed */
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 
 .fade-out {
   opacity: 0;
@@ -28,39 +26,35 @@ body, html, #root {
   to { opacity: 1; transform: scale(1); }
 }
 
-
+/* --- Centering Logic --- */
 .login-screen {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-}
-
-.nav-logo {
-  width: 167px;
-  margin: 25px 50px;
+  justify-content: space-between; /* Pushes navbar top and footer bottom */
 }
 
 .login-content {
-  flex-grow: 1;
+  flex-grow: 1; /* Takes up all available space in the middle */
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-bottom: 20px;
+  align-items: center; /* Centers the card vertically in that middle space */
+  padding: 20px 0;
 }
 
-
 .login-card {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.75); /* Increased opacity for better readability */
   padding: 60px 68px 40px;
   width: 450px;
   border-radius: 4px;
   color: white;
-  margin-top: -60px; 
+  margin-top: 0; /* Removed the -60px to ensure true centering */
 }
 
+/* --- Rest of Card Styles --- */
 .login-card h1 {
   font-size: 32px;
   margin-bottom: 28px;
@@ -77,6 +71,7 @@ body, html, #root {
   margin-bottom: 16px;
   color: white;
   font-size: 16px;
+  padding-right: 50px; 
 }
 
 .signin-btn {
@@ -90,8 +85,12 @@ body, html, #root {
   font-weight: 700;
   margin-top: 24px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
+.signin-btn:hover {
+  background-color: #c11119; 
+}
 
 .help-row {
   display: flex;
@@ -99,6 +98,11 @@ body, html, #root {
   font-size: 13px;
   color: #b3b3b3;
   margin-top: 12px;
+}
+
+.help-row a {
+  color: #b3b3b3;
+  text-decoration: none;
 }
 
 .card-footer {
@@ -116,6 +120,11 @@ body, html, #root {
   text-decoration: none;
 }
 
+.card-footer a:hover, 
+.help-row a:hover {
+  text-decoration: underline;
+}
+
 .recaptcha-text {
   font-size: 13px;
   line-height: 1.3;
@@ -126,103 +135,60 @@ body, html, #root {
   color: #0071eb !important;
 }
 
-.video-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
-}
-
-.full-screen-video {
+/* --- Half-Height Footer --- */
+.login-footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 15px 0; /* Reduced from 30px to 15px */
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  color: #737373;
+  font-size: 14px;
 }
 
-
-.input-container {
-  position: relative;
-  width: 100%;
+.footer-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.password-toggle {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  color: #8c8c8c;
+.footer-top {
+  margin-bottom: 15px; /* Reduced from 30px to 15px */
+}
+
+.footer-top a {
+  color: #737373;
+  text-decoration: none;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; /* Reduced gap */
+  list-style: none;
+  margin-bottom: 15px; /* Reduced from 30px to 15px */
+}
+
+.footer-links a {
+  color: #737373;
+  text-decoration: none;
   font-size: 13px;
-  cursor: pointer;
-  user-select: none;
 }
 
-
-.signin-btn {
-
-  transition: background-color 0.2s ease;
-}
-
-.signin-btn:hover {
-  background-color: #c11119; 
-}
-
-
-.card-footer a:hover, 
-.help-row a:hover {
+.footer-links a:hover {
   text-decoration: underline;
 }
 
-
-.input-container {
-  position: relative;
-  width: 100%;
-}
-
-.password-toggle {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  color: #8c8c8c;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: color 0.2s;
-}
-
-.password-toggle:hover {
-  color: #fff;
-}
-
-
-.signin-btn {
- 
-  transition: background-color 0.2s ease;
-}
-
-.signin-btn:hover {
-  background-color: #c11119; 
-}
-
-.card-footer a:hover, 
-.help-row a:hover {
-  text-decoration: underline;
-}
-
-
-.login-input {
-
-  padding-right: 50px; 
-}
-
+/* --- Navigation & Video --- */
 .navbar {
   display: flex;
   justify-content: space-between; 
   align-items: center;
   padding: 25px 50px;
-  position: absolute; 
   width: 100%;
   z-index: 5;
+}
+
+.nav-logo {
+  width: 167px;
 }
 
 .nav-right {
@@ -251,32 +217,47 @@ body, html, #root {
   font-size: 14px;
 }
 
-.welcome-screen {
-  height: 100vh;
+.video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  z-index: 10;
 }
 
-.welcome-content {
-  flex-grow: 1;
+.full-screen-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #8c8c8c;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  transition: color 0.2s;
 }
 
-.welcome-text {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #e50914; 
-  text-align: center;
-  margin-bottom: 20px;
-  animation: slideUp 1s ease-out;
+.password-toggle:hover {
+  color: #fff;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Responsive adjustment for mobile */
+@media (max-width: 740px) {
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nav-logo {
+    margin: 10px 20px;
+  }
 }

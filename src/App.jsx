@@ -23,7 +23,6 @@ function App() {
     setIsLoggedIn(true);
   };
 
-
   const EyeIcon = () => (
     <svg xmlns="http://www.w3.org/2001/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0z"/><circle cx="12" cy="12" r="3"/></svg>
   );
@@ -41,7 +40,6 @@ function App() {
           </video>
         </div>
       ) : isLoggedIn ? (
-       
         <div className="profile-screen fade-in">
           <header className="navbar profile-nav">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" className="nav-logo" alt="Netflix" />
@@ -50,39 +48,22 @@ function App() {
           <main className="profile-container">
             <h1>Who's watching?</h1>
             <div className="profile-grid">
-          
               <div className="profile-item">
-                <div className="avatar">
-                  <img src={avatar1} alt="Rishav" className="avatar-img" />
-                </div>
+                <div className="avatar"><img src={avatar1} alt="Rishav" className="avatar-img" /></div>
                 <p>Rishav</p>
               </div>
-
-     
               <div className="profile-item">
-                <div className="avatar">
-                  <img src={avatar2} alt="Guest" className="avatar-img" />
-                </div>
+                <div className="avatar"><img src={avatar2} alt="Sayam" className="avatar-img" /></div>
                 <p>Sayam</p>
               </div>
-
-        
               <div className="profile-item">
-                <div className="avatar">
-                  <img src={avatar3} alt="Family" className="avatar-img" />
-                </div>
+                <div className="avatar"><img src={avatar3} alt="Ayush" className="avatar-img" /></div>
                 <p>Ayush</p>
               </div>
-
-              
               <div className="profile-item">
-                <div className="avatar">
-                  <img src={avatar4} alt="Children" className="avatar-img" />
-                </div>
+                <div className="avatar"><img src={avatar4} alt="Baby" className="avatar-img" /></div>
                 <p>Baby</p>
               </div>
-
-             
               <div className="profile-item">
                 <div className="avatar add"><span>+</span></div>
                 <p>Add Profile</p>
@@ -92,10 +73,9 @@ function App() {
           </main>
         </div>
       ) : (
-      
         <div 
           className="login-screen fade-in" 
-          style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${backgroundImg})` }}
+          style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${backgroundImg})` }}
         >
           <header className="navbar">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" className="nav-logo" alt="Netflix" />
@@ -110,23 +90,59 @@ function App() {
 
           <main className="login-content">
             <div className="login-card">
-              <h1>Sign In</h1>
-              <form onSubmit={handleLogin}>
-                <input type="text" placeholder="Email or phone number" className="login-input" required />
-                <div className="input-container">
-                  <input type={showPassword ? "text" : "password"} placeholder="Password" className="login-input" required />
-                  <span className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
-                    {showPassword ? <EyeOffIcon /> : <EyeIcon />}
-                  </span>
-                </div>
-                <button type="submit" className="signin-btn">Sign In</button>
-              </form>
-              <div className="card-footer">
-                <p>New to Netflix? <a href="#">Sign up now.</a></p>
-                <p className="recaptcha-text">This page is protected by Google reCAPTCHA. <a href="#">Learn more.</a></p>
-              </div>
-            </div>
+  <h1>Sign In</h1>
+  <form onSubmit={handleLogin}>
+    <input type="text" placeholder="Email or phone number" className="login-input" required />
+    
+    <div className="input-container">
+      <input 
+        type={showPassword ? "text" : "password"} 
+        placeholder="Password" 
+        className="login-input" 
+        required
+      />
+      <span className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
+        {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+      </span>
+    </div>
+
+    <button type="submit" className="signin-btn">Sign In</button>
+    
+    {/* RE-ADDED: Remember me and Need help? */}
+    <div className="help-row">
+      <div className="remember">
+        <input type="checkbox" id="rem" />
+        <label htmlFor="rem">Remember me</label>
+      </div>
+      <a href="#" className="help-link">Need help?</a>
+    </div>
+  </form>
+  
+  <div className="card-footer">
+    <p>New to Netflix? <a href="#">Sign up now.</a></p>
+    <p className="recaptcha-text">
+      This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+      <a href="#"> Learn more.</a>
+    </p>
+  </div>
+</div>
           </main>
+
+          {/* --- NEW FOOTER SECTION --- */}
+          <footer className="login-footer">
+            <div className="footer-wrapper">
+              <p className="footer-top">Questions? Call <a href="tel:000-800-919-1694">000-800-919-1694</a></p>
+              <ul className="footer-links">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Help Centre</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Corporate Information</a></li>
+              </ul>
+        
+            </div>
+          </footer>
         </div>
       )}
     </div>
