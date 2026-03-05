@@ -108,7 +108,7 @@ function App() {
 
     <button type="submit" className="signin-btn">Sign In</button>
     
-    {/* RE-ADDED: Remember me and Need help? */}
+   
     <div className="help-row">
       <div className="remember">
         <input type="checkbox" id="rem" />
@@ -128,7 +128,6 @@ function App() {
 </div>
           </main>
 
-          {/* --- NEW FOOTER SECTION --- */}
           <footer className="login-footer">
             <div className="footer-wrapper">
               <p className="footer-top">Questions? Call <a href="tel:000-800-919-1694">000-800-919-1694</a></p>
