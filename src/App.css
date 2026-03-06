@@ -8,7 +8,7 @@ body, html, #root {
   width: 100%;
   height: 100%;
   background-color: #000;
-  overflow-x: hidden; /* Changed from hidden to overflow-x to allow vertical space if needed */
+  overflow-x: hidden; 
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -26,7 +26,7 @@ body, html, #root {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* --- Centering Logic --- */
+
 .login-screen {
   min-height: 100vh;
   width: 100vw;
@@ -34,27 +34,25 @@ body, html, #root {
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pushes navbar top and footer bottom */
+  justify-content: space-between; 
 }
 
 .login-content {
-  flex-grow: 1; /* Takes up all available space in the middle */
+  flex-grow: 1; 
   display: flex;
   justify-content: center;
-  align-items: center; /* Centers the card vertically in that middle space */
+  align-items: center; 
   padding: 20px 0;
 }
 
 .login-card {
-  background-color: rgba(0, 0, 0, 0.75); /* Increased opacity for better readability */
+  background-color: rgba(0, 0, 0, 0.75); 
   padding: 60px 68px 40px;
   width: 450px;
   border-radius: 4px;
   color: white;
-  margin-top: 0; /* Removed the -60px to ensure true centering */
+  margin-top: 0; 
 }
-
-/* --- Rest of Card Styles --- */
 .login-card h1 {
   font-size: 32px;
   margin-bottom: 28px;
@@ -135,10 +133,9 @@ body, html, #root {
   color: #0071eb !important;
 }
 
-/* --- Half-Height Footer --- */
 .login-footer {
   background-color: rgba(0, 0, 0, 0.75);
-  padding: 15px 0; /* Reduced from 30px to 15px */
+  padding: 15px 0; 
   width: 100%;
   color: #737373;
   font-size: 14px;
@@ -151,7 +148,7 @@ body, html, #root {
 }
 
 .footer-top {
-  margin-bottom: 15px; /* Reduced from 30px to 15px */
+  margin-bottom: 15px; 
 }
 
 .footer-top a {
@@ -162,9 +159,9 @@ body, html, #root {
 .footer-links {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px; /* Reduced gap */
+  gap: 10px; 
   list-style: none;
-  margin-bottom: 15px; /* Reduced from 30px to 15px */
+  margin-bottom: 15px; 
 }
 
 .footer-links a {
@@ -177,7 +174,7 @@ body, html, #root {
   text-decoration: underline;
 }
 
-/* --- Navigation & Video --- */
+
 .navbar {
   display: flex;
   justify-content: space-between; 
@@ -252,7 +249,6 @@ body, html, #root {
   color: #fff;
 }
 
-/* Responsive adjustment for mobile */
 @media (max-width: 740px) {
   .footer-links {
     grid-template-columns: repeat(2, 1fr);
